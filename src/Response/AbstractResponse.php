@@ -22,7 +22,7 @@ abstract class AbstractResponse implements \ArrayAccess
     /**
      * {@inheritdoc}
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->apiResponse[$offset]);
     }
@@ -30,7 +30,7 @@ abstract class AbstractResponse implements \ArrayAccess
     /**
      * {@inheritdoc}
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->apiResponse[$offset];
     }
@@ -38,7 +38,7 @@ abstract class AbstractResponse implements \ArrayAccess
     /**
      * {@inheritdoc}
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         $this->apiResponse[$offset] = $value;
     }
@@ -46,7 +46,7 @@ abstract class AbstractResponse implements \ArrayAccess
     /**
      * {@inheritdoc}
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->apiResponse[$offset]);
     }
